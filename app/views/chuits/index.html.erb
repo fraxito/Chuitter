@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Chuits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Usuario</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chuits.each do |chuit| %>
+      <tr>
+        <td><%= chuit.text %></td>
+        <td><%= chuit.usuario_id %></td>
+        <td><%= link_to 'Show', chuit %></td>
+        <td><%= link_to 'Edit', edit_chuit_path(chuit) %></td>
+        <td><%= link_to 'Destroy', chuit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chuit', new_chuit_path %>

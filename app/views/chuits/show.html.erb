@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @chuit.text %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @chuit.usuario_id %>
+</p>
+
+<%= link_to 'Edit', edit_chuit_path(@chuit) %> |
+<%= link_to 'Back', chuits_path %>
