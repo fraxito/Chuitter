@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'paginas_estaticas/inicio'
+
+  get 'paginas_estaticas/ayuda'
+
   resources :chuits
 
   resources :usuarios
