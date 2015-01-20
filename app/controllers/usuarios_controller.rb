@@ -10,6 +10,11 @@ class UsuariosController < ApplicationController
   # GET /usuarios/1
   # GET /usuarios/1.json
   def show
+    if @usuario.chuits.empty?
+      redirect_to (usuarios_path)
+    else
+      render action: :show
+    end
   end
 
   # GET /usuarios/new

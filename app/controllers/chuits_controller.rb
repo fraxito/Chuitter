@@ -19,6 +19,10 @@ class ChuitsController < ApplicationController
 
   # GET /chuits/1/edit
   def edit
+    if @chuit.usuario_id != session[:usuario_id]
+      flash[:notice] = "No puedes editar este Chuit"
+      redirect_to(chuits_path)
+    end
   end
 
   # POST /chuits

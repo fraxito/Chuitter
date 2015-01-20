@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Chuits</h1>
-
+<% if @chuits.count > 0  %>
 <table>
   <thead>
     <tr>
@@ -14,6 +14,7 @@
   <tbody>
     <% @chuits.each do |chuit| %>
       <tr>
+        <td><%= chuit.usuario.nombre %></td> 
         <td><%= chuit.text %></td>
         <td><%= chuit.usuario_id %></td>
         <td><%= link_to 'Show', chuit %></td>
@@ -23,7 +24,9 @@
     <% end %>
   </tbody>
 </table>
-
+<% else %>
+  <em>NO HAY CHUITS </em>
+<%  end %>
 <br>
 
 <%= link_to 'New Chuit', new_chuit_path %>

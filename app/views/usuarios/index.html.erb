@@ -1,27 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Usuarios</h1>
+<h1>Lista de Usuarios</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<table bgcolor="#ccc" border="1">
+    <thead>
+        <tr>
+            <th>Cuenta de chuits</th>
+            <th>¿Tiene más de un chuit?</th>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th colspan="3">Acciones </th>
+        </tr>
+    </thead>
 
-  <tbody>
-    <% @usuarios.each do |usuario| %>
-      <tr>
-        <td><%= usuario.nombre %></td>
-        <td><%= usuario.email %></td>
-        <td><%= link_to 'Show', usuario %></td>
-        <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    <tbody>
+        <% @usuarios.each do |usuario| %>
+          <tr>
+              <td><%= usuario.chuits.count %></td>
+              <td><%= 
+                  if usuario.chuits.count > 1
+                    "!Eres guay!"
+                    else
+                    "!Perdedor!"
+                    end
+                %></td>
+              <td><%= usuario.id %></td>
+              <td><%= usuario.nombre %></td>
+              <td><%= usuario.email %></td>
+              <td><%= link_to 'Mostrar', usuario %></td>
+              <td><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
+              <td><%= link_to 'Borrar', usuario, method: :delete, data: { confirm: 'ESTAS SEGURO??' } %></td>
+          </tr>
+        <% end %>
+    </tbody>
 </table>
 
 <br>

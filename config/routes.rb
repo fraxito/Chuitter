@@ -3,6 +3,18 @@ Rails.application.routes.draw do
 
   resources :usuarios
 
+  get '/nuevo_chuit' => 'chuits#new'
+  
+  get 'listaUsuarios' => 'usuarios#index'
+  
+  get '/loosers'  => redirect('/usuarios')
+  
+  root 'chuits#index'
+  
+  get 'usuarios/:nombre' => 'usuarios#index', as:'lista'
+  
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
