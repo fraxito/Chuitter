@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   
   get '/loosers'  => redirect('/usuarios')
   
-  root 'chuits#index'
+  root 'paginas_estaticas#inicio'
   
   get 'usuarios/:nombre' => 'usuarios#index', as:'lista'
   
