@@ -7,16 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-        <div class="container">
-            <%= link_to "Inicio", '#', id:"logo" %>
-            <ul class="nav navbar-var navbar-right">
-                <li> <%= link_to "Iniciar Sesión", '#'%></li>
-            </ul>
-        </div> 
-    </header>
+    <%= render 'layouts/cabecera' %>
     <div class="container">
       <%= yield %>
     </div>
+    <%= render 'layouts/pie' %>
 </body>
 </html>
