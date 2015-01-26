@@ -15,6 +15,7 @@ class UsuariosController < ApplicationController
     else
       render action: :show
     end
+    #debugger
   end
 
   # GET /usuarios/new
